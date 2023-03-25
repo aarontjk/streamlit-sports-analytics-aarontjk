@@ -8,8 +8,17 @@ away = ['test1', 'test2', 'test3', 'test4', 'test5', 'test6', 'test7', 'test8', 
 
 ### UI Design Below ###
 
+title = """
+<style>
+SportsAnalytics Football Outcome Predictor {
+  text-align: center
+  font-size=30
+}
+</style>
+"""
 
-st.markdown('**:red[SportsAnalytics Football Outcome Predictor]**')
+
+st.markdown(title)
 
 
 c1, c2, c3 = st.columns(3)
