@@ -3,7 +3,7 @@ import pandas as pd
 
 
 ### Load player dataset ###
-data = "raw_data\FM 2023.csv"
+data = "raw_data/FM 2023.csv"
 players = pd.read_csv(data)
 
 ### Retrieve list of clubs ###
