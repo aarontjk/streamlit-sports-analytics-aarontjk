@@ -2,11 +2,7 @@ import streamlit as st
 
 
 
-
-
-
-
-c1, c2, c3 = st.columns(2)
+c1, c2, c3 = st.columns(3)
 
 with c1:
     with st.form('Home Team Lineup:'):
