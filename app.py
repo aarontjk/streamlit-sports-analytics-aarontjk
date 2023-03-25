@@ -9,7 +9,7 @@ away = ['test1', 'test2', 'test3', 'test4', 'test5', 'test6', 'test7', 'test8', 
 ### UI Design Below ###
 
 
-st.markdown('**SportsAnalytics Football Outcome Predictor**:red[colored red]')
+st.markdown('**:red[SportsAnalytics Football Outcome Predictor]**')
 
 
 c1, c2, c3 = st.columns(3)
