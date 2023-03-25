@@ -1,8 +1,12 @@
 import streamlit as st
 
 
-c1, c2 = st.columns(2)
 
+
+
+
+
+c1, c2, c3 = st.columns(2)
 
 with c1:
     with st.form('Home Team Lineup:'):
@@ -18,9 +22,12 @@ with c1:
         home_player10 = st.selectbox("Enter Home Team Player 10:", options = ['test1','test2','test3'])
         home_player11 = st.selectbox("Enter Home Team Player 11:", options = ['test1','test2','test3'])
 
-
-
 with c2:
+    for i in range(0,30):
+        print('|')
+
+
+with c3:
     with st.form('Away Team Lineup:'):
         away_player1 = st.selectbox("Enter Away Team Player 1:", options = ['test1','test2','test3'])
         away_player2 = st.selectbox("Enter Away Team Player 2:", options = ['test1','test2','test3'])
