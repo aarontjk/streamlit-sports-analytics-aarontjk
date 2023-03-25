@@ -1,9 +1,15 @@
 import streamlit as st
+import pandas as pd
 
 
-home = ['test1', 'test2', 'test3', 'test4', 'test5', 'test6', 'test7', 'test8', 'test9', 'test10', 'test11']
-away = ['test1', 'test2', 'test3', 'test4', 'test5', 'test6', 'test7', 'test8', 'test9', 'test10', 'test11']
+### Load player dataset ###
+data = "raw_data\FM 2023.csv"
+players = pd.read_csv(data)
 
+### Retrieve list of clubs ###
+clubs_df = players[['Club']].dropna(axis=0)
+clubs = list(clubs_df['Club'].unique())
+clubs.sort()
 
 
 ### UI Design Below ###
@@ -17,11 +23,17 @@ st.markdown("<h1 style='text-align: center; color: red;'>Football Outcome Predic
 a1, a2, a3 = st.columns(3)
 
 with a1:
-    home_team = st.selectbox("Home Team:", options = ['team1','team2'])
+    home_team = st.selectbox("Home Team:", options = clubs)
 
 
 with a3:
-    away_team = st.selectbox("Away Team:", options = ['team1','team2'])
+    away_team = st.selectbox("Away Team:", options = clubs)
+
+
+### Get players from each team
+home = ['test1', 'test2', 'test3', 'test4', 'test5', 'test6', 'test7', 'test8', 'test9', 'test10', 'test11']
+away = ['test1', 'test2', 'test3', 'test4', 'test5', 'test6', 'test7', 'test8', 'test9', 'test10', 'test11']
+
 
 
 ### Enter players ###
