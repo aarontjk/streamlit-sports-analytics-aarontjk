@@ -19,12 +19,10 @@ a1, a2, a3 = st.columns(3)
 with a1:
     home_team = st.selectbox("Home Team:", options = ['team1','team2'])
 
-st.write(home_team)
 
 with a3:
     away_team = st.selectbox("Away Team:", options = ['team1','team2'])
 
-st.write(away_team)
 
 ### Enter players ###
 
