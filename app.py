@@ -17,6 +17,7 @@ with c1:
         home_player9 = st.selectbox("Enter Home Team Player 9:", options = ['test1','test2','test3'])
         home_player10 = st.selectbox("Enter Home Team Player 10:", options = ['test1','test2','test3'])
         home_player11 = st.selectbox("Enter Home Team Player 11:", options = ['test1','test2','test3'])
+        st.form_submit_button('Submit')
 
 with c2:
     for i in range(0,30):
@@ -36,3 +37,4 @@ with c3:
         away_player9 = st.selectbox("Enter Away Team Player 9:", options = ['test1','test2','test3'])
         away_player10 = st.selectbox("Enter Away Team Player 10:", options = ['test1','test2','test3'])
         away_player11 = st.selectbox("Enter Away Team Player 11:", options = ['test1','test2','test3'])
+        st.form_submit_button('Submit')
