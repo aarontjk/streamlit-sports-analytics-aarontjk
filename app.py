@@ -11,6 +11,15 @@ away = ['test1', 'test2', 'test3', 'test4', 'test5', 'test6', 'test7', 'test8', 
 st.markdown("<h1 style='text-align: center; color: red;'>SportsAnalytics</h1>", unsafe_allow_html=True)
 st.markdown("<h1 style='text-align: center; color: red;'>Football Outcome Predictor</h1>", unsafe_allow_html=True)
 
+a1, a2, a3 = st.columns(3)
+
+with a1:
+    home_team = st.selectbox("Home Team:", options = ['team1','team2'])
+
+with a3:
+    away_team = st.selectbox("Away Team:", options = ['team1','team2'])
+
+
 
 c1, c2, c3 = st.columns(3)
 
