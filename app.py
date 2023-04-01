@@ -17,6 +17,8 @@ def prep_data(home_lineup, home_form, away_lineup, away_form):
         elif char == "D":
             away_form_num += 1
 
+
+    st.write(type(data))
     for player in home_lineup:
         home_df = data[data['player_name'].isin(home_lineup)]
 
