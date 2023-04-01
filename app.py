@@ -44,10 +44,9 @@ away_players.sort()
 
 ### Enter players ###
 
+c1, c2, c3 = st.columns(3)
 
 with st.form('Matchup:'):
-
-    c1, c2, c3 = st.columns(3)
 
     with c1:
         home_lineup = st.multiselect(
@@ -68,5 +67,5 @@ with st.form('Matchup:'):
         away_form = st.text_input('Please enter the last 5 results of the away team (e.g. WWDDL):')
 
 
-    with c2:
-        st.form_submit_button("Submit")
+
+    st.form_submit_button("Submit", use_container_width=True)
