@@ -7,12 +7,14 @@ def check_submit(home_lineup, home_form, away_lineup, away_form):
         st.error("Please verify number of players selected.")
 
     for char in home_form:
-        if char != "W" or char != "D" or char != "L":
-            st.error("Invalid form input.")
+        if (char != "W" or char != "D" or char != "L"):
+            st.error("Invalid Home Form input.")
+            break
 
     for char in away_form:
-        if char != "W" or char != "D" or char != "L":
-            st.error("Invalid form input.")
+        if (char != "W" or char != "D" or char != "L"):
+            st.error("Invalid Away Form input.")
+            break
 
 
 active = False
