@@ -3,12 +3,12 @@ import pandas as pd
 
 
 ### Load player dataset ###
-data = "raw_data/final.csv"
+data = "raw_data/FM 2023.csv"
 players = pd.read_csv(data)
 
 ### Retrieve list of clubs ###
-clubs_df = players[['home_team_name']]
-clubs = list(clubs_df['home_team_name'].unique())
+clubs_df = players[['Club']].dropna(axis=0)
+clubs = list(clubs_df['Club'].unique())
 clubs.sort()
 
 
