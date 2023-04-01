@@ -1,27 +1,41 @@
 import streamlit as st
 import pandas as pd
 
+def prep_data(home_lineup, home_form, away_lineup, away_form):
+    for player in home_lineup:
+
+    return 0
+
 def check_submit(home_lineup, home_form, away_lineup, away_form):
+    go = True
     if (len(home_lineup) != 11 or len(away_lineup) != 11):
         st.error("Please verify number of players selected.",icon="🚨")
+        go = False
 
     if (len(home_form) != 5 or len(away_form) != 5):
         st.error("Please verify Form input.",icon="🚨")
+        go = False
 
     for char in home_form:
         if (char not in "WDL"):
             st.error("Invalid Home Form input.",icon="🚨")
+            go = False
             break
 
     for char in away_form:
         if (char not in "WDL"):
             st.error("Invalid Away Form input.",icon="🚨")
+            go = False
             break
+
+    if go == True:
+        prep_data(home_lineup, home_form, away_lineup, away_form)
+
 
 active = False
 
 ### Load player dataset ###
-data = "raw_data/FM 2023.csv"
+data = "raw_data/player_attributes_2023.csv"
 players = pd.read_csv(data)
 
 ### Retrieve list of clubs ###
