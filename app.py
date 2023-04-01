@@ -67,6 +67,9 @@ with st.form('Matchup:'):
 
         away_form = st.text_input('Please enter the last 5 results of the away team (e.g. WWDDL):')
 
+
+    st.form_submit_button("Submit", use_container_width=True, on_click=check_submit, args=(home_lineup,home_form,away_lineup,away_form))
+
 def check_submit(home_lineup, home_form, away_lineup, away_form):
     if (len(home_lineup) != 11 or len(away_lineup) != 11):
         st.error("Please verify number of players selected.",icon="🚨")
@@ -83,5 +86,3 @@ def check_submit(home_lineup, home_form, away_lineup, away_form):
         if (char != "W" or char != "D" or char != "L"):
             st.error("Invalid Away Form input.",icon="🚨")
             break
-
-    st.form_submit_button("Submit", use_container_width=True, on_click=check_submit, args=(home_lineup,home_form,away_lineup,away_form))
