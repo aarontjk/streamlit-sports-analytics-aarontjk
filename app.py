@@ -71,7 +71,7 @@ with st.form('Matchup:'):
         st.write(len(home_lineup))
 
         home_form = st.text_input('Please enter the last 5 results of the home team (e.g. WWDDL):')
-        st.write(home_form)
+
 
 
 
@@ -82,6 +82,6 @@ with st.form('Matchup:'):
         st.write(len(away_lineup))
 
         away_form = st.text_input('Please enter the last 5 results of the away team (e.g. WWDDL):')
-        st.write(away_form)
+
 
     st.form_submit_button("Submit", use_container_width=True, on_click=check_submit, args=(home_lineup,home_form,away_lineup,away_form))
