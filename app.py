@@ -44,7 +44,7 @@ away_players.sort()
 
 c1, c2, c3 = st.columns(3)
 
-with st.form('Matchup:')
+with st.form('Matchup:'):
     with c1:
         home_lineup = st.multiselect(
         f'Select the starting lineup:',
