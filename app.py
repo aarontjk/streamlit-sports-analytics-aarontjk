@@ -2,6 +2,19 @@ import streamlit as st
 import pandas as pd
 
 
+def check_submit(home_lineup, home_form, away_lineup, away_form):
+    if (len(home_lineup) != 11 or len(away_lineup) != 11):
+        st.error("Please verify number of players selected.")
+
+    for char in home_form:
+        if char != "W" or char != "D" or char != "L":
+            st.error("Invalid form input.")
+
+    for char in away_form:
+        if char != "W" or char != "D" or char != "L":
+            st.error("Invalid form input.")
+
+
 active = False
 
 ### Load player dataset ###
@@ -68,4 +81,4 @@ with st.form('Matchup:'):
 
 
 
-    st.form_submit_button("Submit", use_container_width=True)
+    st.form_submit_button("Submit", use_container_width=True, on_click=check_submit)
