@@ -104,4 +104,4 @@ with c3:
         away_player11 = st.selectbox("Enter Away Team Player 11:", options = away_players)
         away_players.remove(away_player11)
         st.form_submit_button('Submit')
-''''
+'''
