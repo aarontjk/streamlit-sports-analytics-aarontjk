@@ -57,4 +57,4 @@ with st.form('Matchup:'):
         away_players, key='away_lineup')
 
     with c2:
-        st.form_submit_button(label="Submit")
+        st.form_submit_button("Submit")
