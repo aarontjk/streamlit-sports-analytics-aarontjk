@@ -1,7 +1,30 @@
 import streamlit as st
 import pandas as pd
 
-#def prep_data(home_lineup, home_form, away_lineup, away_form):
+def prep_data(home_lineup, home_form, away_lineup, away_form):
+
+    home_form_num = 0
+    for char in  home_form:
+        if char == "W":
+            home_form_num += 2
+        elif char == "D":
+            home_form_num += 1
+
+    away_form_num = 0
+    for char in  away_form:
+        if char == "W":
+            away_form_num += 2
+        elif char == "D":
+            away_form_num += 1
+
+    for player in home_lineup:
+        home_df = data[data['player_name'].isin(home_lineup)]
+
+    for player in away_lineup:
+        away_df = data[data['player_name'].isin(away_lineup)]
+
+    home_df.to_csv('hometest.csv')
+    away_df.to_csv('awaytest.csv')
 
 def check_submit(home_lineup, home_form, away_lineup, away_form):
     go = True
@@ -25,8 +48,10 @@ def check_submit(home_lineup, home_form, away_lineup, away_form):
             go = False
             break
 
-    #if go == True:
-    #    prep_data(home_lineup, home_form, away_lineup, away_form)
+    if go == True:
+        prep_data(home_lineup, home_form, away_lineup, away_form)
+    else:
+        st.error("Something is wrong!",icon="🚨")
 
 
 active = False
