@@ -46,10 +46,16 @@ c1, c2, c3 = st.columns(3)
 
 
 with c1:
+    options = st.multiselect(
+     f'Select the starting lineup for {home_team}',
+     home_players)
+
+
+'''with c1:
     for i in range(1,12):
         player_selected = st.selectbox(f"Enter Home Team Player {i}:", options=home_players)
         home_players.remove(player_selected)
-
+'''
 
 '''with c1:
     with st.form('Home Team Lineup:'):
