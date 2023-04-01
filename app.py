@@ -58,7 +58,7 @@ with st.form('Matchup:'):
         f'Select the starting lineup:',
         away_players, key='away_lineup')
 
-    if len(home_lineup == 11 or away_lineup == 11):
+    if (len(home_lineup) == 11 or len(away_lineup) == 11):
         active = True
 
     st.form_submit_button("Submit", disabled=active)
