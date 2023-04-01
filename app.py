@@ -7,8 +7,9 @@ data = "raw_data/FM 2023.csv"
 players = pd.read_csv(data)
 
 ### Retrieve list of clubs ###
-clubs_df = players[['Club']].dropna(axis=0)
-clubs = list(clubs_df['Club'].unique())
+clubs_path = "raw_data/final.csv"
+clubs_df = pd.read_csv(clubs_path)
+clubs = list(clubs_df['home_team_name'].unique())
 clubs.sort()
 
 
