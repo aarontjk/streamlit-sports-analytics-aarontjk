@@ -1,7 +1,22 @@
 import streamlit as st
 import pandas as pd
 
+def check_submit(home_lineup, home_form, away_lineup, away_form):
+    if (len(home_lineup) != 11 or len(away_lineup) != 11):
+        st.error("Please verify number of players selected.",icon="🚨")
 
+    if (len(home_form) != 5 or len(away_form) != 5):
+        st.error("Please verify Form input.",icon="🚨")
+
+    for char in home_form:
+        if (char != "W" or char != "D" or char != "L"):
+            st.error("Invalid Home Form input.",icon="🚨")
+            break
+
+    for char in away_form:
+        if (char != "W" or char != "D" or char != "L"):
+            st.error("Invalid Away Form input.",icon="🚨")
+            break
 
 active = False
 
@@ -69,20 +84,3 @@ with st.form('Matchup:'):
 
 
     st.form_submit_button("Submit", use_container_width=True, on_click=check_submit, args=(home_lineup,home_form,away_lineup,away_form))
-
-def check_submit(home_lineup, home_form, away_lineup, away_form):
-    if (len(home_lineup) != 11 or len(away_lineup) != 11):
-        st.error("Please verify number of players selected.",icon="🚨")
-
-    if (len(home_form) != 5 or len(away_form) != 5):
-        st.error("Please verify Form input.",icon="🚨")
-
-    for char in home_form:
-        if (char != "W" or char != "D" or char != "L"):
-            st.error("Invalid Home Form input.",icon="🚨")
-            break
-
-    for char in away_form:
-        if (char != "W" or char != "D" or char != "L"):
-            st.error("Invalid Away Form input.",icon="🚨")
-            break
