@@ -81,4 +81,4 @@ with st.form('Matchup:'):
 
 
 
-    st.form_submit_button("Submit", use_container_width=True, on_click=check_submit)
+    st.form_submit_button("Submit", use_container_width=True, on_click=check_submit(home_lineup,home_form,away_lineup,away_form))
