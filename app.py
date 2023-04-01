@@ -25,14 +25,14 @@ def check_submit(home_lineup, home_form, away_lineup, away_form):
             go = False
             break
 
-    if go == True:
-        prep_data(home_lineup, home_form, away_lineup, away_form)
+    #if go == True:
+    #    prep_data(home_lineup, home_form, away_lineup, away_form)
 
 
 active = False
 
 ### Load player dataset ###
-data = "raw_data/player_attributes_2023.csv"
+data = "raw_data/player_attribute_2023.csv"
 players = pd.read_csv(data)
 
 ### Retrieve list of clubs ###
