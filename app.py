@@ -49,16 +49,19 @@ c1, c2, c3 = st.columns(3)
 with st.form('Matchup:'):
     with c1:
         home_lineup = st.multiselect(
-        f'Select the starting lineup:',
-        home_players, key='home_lineup')
+        f'Select the starting lineup:',)
+        st.write(len(home_lineup))
 
 
     with c3:
         away_lineup = st.multiselect(
         f'Select the starting lineup:',
         away_players, key='away_lineup')
+        st.write(len(away_lineup))
 
     if (len(home_lineup) == 11 or len(away_lineup) == 11):
         active = True
+
+
 
     st.form_submit_button("Submit", disabled=active)
