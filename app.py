@@ -60,8 +60,5 @@ with st.form('Matchup:'):
         away_players, key='away_lineup')
         st.write(len(away_lineup))
 
-    if (len(home_lineup) == 11 or len(away_lineup) == 11):
-        active = True
 
-
-    st.form_submit_button("Submit", disabled=active)
+    st.form_submit_button("Submit")
