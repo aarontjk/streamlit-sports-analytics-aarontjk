@@ -64,5 +64,5 @@ with st.form('Matchup:'):
         active = True
 
 
-
-    st.form_submit_button("Submit", disabled=active)
+    with c2:
+        st.form_submit_button("Submit", disabled=active)
