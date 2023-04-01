@@ -105,7 +105,7 @@ with st.form('Matchup:'):
         home_lineup = st.multiselect(
         f'Select the starting lineup:',
         home_players, key='home_lineup')
-        st.write(len(home_lineup), type(home_lineup), home_lineup, type(home_lineup[0]))
+        st.write(len(home_lineup))
 
         home_form = st.text_input('Please enter the last 5 results of the home team (e.g. WWDDL):')
 
