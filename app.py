@@ -11,12 +11,12 @@ def check_submit(home_lineup, home_form, away_lineup, away_form):
     for char in home_form:
         if (char != "W" or char != "D" or char != "L"):
             st.error("Invalid Home Form input.",icon="🚨")
-            break
+
 
     for char in away_form:
         if (char != "W" or char != "D" or char != "L"):
             st.error("Invalid Away Form input.",icon="🚨")
-            break
+
 
 active = False
 
