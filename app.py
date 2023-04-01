@@ -46,68 +46,12 @@ c1, c2, c3 = st.columns(3)
 
 
 with c1:
-    options = st.multiselect(
+    home_lineup = st.multiselect(
      f'Select the starting lineup for {home_team}',
      home_players)
 
 
-'''with c1:
-    for i in range(1,12):
-        player_selected = st.selectbox(f"Enter Home Team Player {i}:", options=home_players)
-        home_players.remove(player_selected)
-'''
-
-'''with c1:
-    with st.form('Home Team Lineup:'):
-        home_player1 = st.selectbox("Enter Home Team Player 1:", options = home_players)
-        home_players.remove(home_player1)
-        home_player2 = st.selectbox("Enter Home Team Player 2:", options = home_players)
-        home_players.remove(home_player2)
-        home_player3 = st.selectbox("Enter Home Team Player 3:", options = home_players)
-        home_players.remove(home_player3)
-        home_player4 = st.selectbox("Enter Home Team Player 4:", options = home_players)
-        home_players.remove(home_player4)
-        home_player5 = st.selectbox("Enter Home Team Player 5:", options = home_players)
-        home_players.remove(home_player5)
-        home_player6 = st.selectbox("Enter Home Team Player 6:", options = home_players)
-        home_players.remove(home_player6)
-        home_player7 = st.selectbox("Enter Home Team Player 7:", options = home_players)
-        home_players.remove(home_player7)
-        home_player8 = st.selectbox("Enter Home Team Player 8:", options = home_players)
-        home_players.remove(home_player8)
-        home_player9 = st.selectbox("Enter Home Team Player 9:", options = home_players)
-        home_players.remove(home_player9)
-        home_player10 = st.selectbox("Enter Home Team Player 10:", options = home_players)
-        home_players.remove(home_player10)
-        home_player11 = st.selectbox("Enter Home Team Player 11:", options = home_players)
-        home_players.remove(home_player11)
-        st.form_submit_button('Submit')
-'''
-
-'''
 with c3:
-    with st.form('Away Team Lineup:'):
-        away_player1 = st.selectbox("Enter Away Team Player 1:", options = away_players)
-        away_players.remove(away_player1)
-        away_player2 = st.selectbox("Enter Away Team Player 2:", options = away_players)
-        away_players.remove(away_player2)
-        away_player3 = st.selectbox("Enter Away Team Player 3:", options = away_players)
-        away_players.remove(away_player3)
-        away_player4 = st.selectbox("Enter Away Team Player 4:", options = away_players)
-        away_players.remove(away_player4)
-        away_player5 = st.selectbox("Enter Away Team Player 5:", options = away_players)
-        away_players.remove(away_player5)
-        away_player6 = st.selectbox("Enter Away Team Player 6:", options = away_players)
-        away_players.remove(away_player6)
-        away_player7 = st.selectbox("Enter Away Team Player 7:", options = away_players)
-        away_players.remove(away_player7)
-        away_player8 = st.selectbox("Enter Away Team Player 8:", options = away_players)
-        away_players.remove(away_player8)
-        away_player9 = st.selectbox("Enter Away Team Player 9:", options = away_players)
-        away_players.remove(away_player9)
-        away_player10 = st.selectbox("Enter Away Team Player 10:", options = away_players)
-        away_players.remove(away_player10)
-        away_player11 = st.selectbox("Enter Away Team Player 11:", options = away_players)
-        away_players.remove(away_player11)
-        st.form_submit_button('Submit')
-'''
+    away_lineup = st.multiselect(
+     f'Select the starting lineup for {away_team}',
+     away_players)
