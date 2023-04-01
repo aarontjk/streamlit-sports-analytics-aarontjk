@@ -1,10 +1,7 @@
 import streamlit as st
 import pandas as pd
 
-def prep_data(home_lineup, home_form, away_lineup, away_form):
-    for player in home_lineup:
-
-    return 0
+#def prep_data(home_lineup, home_form, away_lineup, away_form):
 
 def check_submit(home_lineup, home_form, away_lineup, away_form):
     go = True
