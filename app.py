@@ -2,6 +2,8 @@ import streamlit as st
 import pandas as pd
 
 
+active = False
+
 ### Load player dataset ###
 data = "raw_data/FM 2023.csv"
 players = pd.read_csv(data)
@@ -56,4 +58,7 @@ with st.form('Matchup:'):
         f'Select the starting lineup:',
         away_players, key='away_lineup')
 
-    st.form_submit_button(st.markdown("<h1 style='text-align: center; color: red;'>Submit</h1>", unsafe_allow_html=True))
+    if len(home_lineup == 11 or away_lineup == 11):
+        active = True
+
+    st.form_submit_button("Submit", disabled=active)
