@@ -51,7 +51,7 @@ def check_submit(home_lineup, home_form, away_lineup, away_form, data):
             break
 
     if go == True:
-        prep_data(home_lineup, home_form, away_lineup, away_form)
+        prep_data(home_lineup, home_form, away_lineup, away_form, data)
     else:
         st.error("Something is wrong!",icon="🚨")
 
