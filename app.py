@@ -44,7 +44,14 @@ away_players.sort()
 
 c1, c2, c3 = st.columns(3)
 
+
 with c1:
+    for i in range(1,12):
+        player_selected = st.selectbox(f"Enter Home Team Player {i}:", options=home_players)
+        home_players.remove(player_selected)
+
+
+'''with c1:
     with st.form('Home Team Lineup:'):
         home_player1 = st.selectbox("Enter Home Team Player 1:", options = home_players)
         home_players.remove(home_player1)
@@ -69,9 +76,9 @@ with c1:
         home_player11 = st.selectbox("Enter Home Team Player 11:", options = home_players)
         home_players.remove(home_player11)
         st.form_submit_button('Submit')
+'''
 
-
-
+'''
 with c3:
     with st.form('Away Team Lineup:'):
         away_player1 = st.selectbox("Enter Away Team Player 1:", options = away_players)
@@ -97,3 +104,4 @@ with c3:
         away_player11 = st.selectbox("Enter Away Team Player 11:", options = away_players)
         away_players.remove(away_player11)
         st.form_submit_button('Submit')
+''''
