@@ -18,14 +18,12 @@ def prep_data(home_lineup, home_form, away_lineup, away_form):
             away_form_num += 1
 
 
-    for player in home_lineup:
-        home_df = players[players['player_name'].isin(home_lineup)]
+    home_df = players[players['player_name'].isin(home_lineup)]
 
-    for player in away_lineup:
-        away_df = players[players['player_name'].isin(away_lineup)]
+    away_df = players[players['player_name'].isin(away_lineup)]
 
-    home_df.to_csv('hometest.csv')
-    away_df.to_csv('awaytest.csv')
+    home_df.to_csv('/raw_data/hometest.csv')
+    away_df.to_csv('/raw_data/awaytest.csv')
 
 def check_submit(home_lineup, home_form, away_lineup, away_form):
     go = True
