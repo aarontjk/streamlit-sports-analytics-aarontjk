@@ -58,7 +58,7 @@ with st.form('Matchup:'):
         away_lineup = st.multiselect(
         f'Select the starting lineup:',
         away_players, key='away_lineup')
-        st.write(len(home_lineup))
+        st.write(len(away_lineup))
 
     if (len(home_lineup) == 11 or len(away_lineup) == 11):
         active = True
