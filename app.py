@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 
-def prep_data(home_lineup, home_form, away_lineup, away_form, data):
+def prep_data(home_lineup, home_form, away_lineup, away_form):
 
     home_form_num = 0
     for char in  home_form:
@@ -18,17 +18,16 @@ def prep_data(home_lineup, home_form, away_lineup, away_form, data):
             away_form_num += 1
 
 
-    st.write(type(data))
     for player in home_lineup:
-        home_df = data[data['player_name'].isin(home_lineup)]
+        home_df = players[players['player_name'].isin(home_lineup)]
 
     for player in away_lineup:
-        away_df = data[data['player_name'].isin(away_lineup)]
+        away_df = players[players['player_name'].isin(away_lineup)]
 
     home_df.to_csv('hometest.csv')
     away_df.to_csv('awaytest.csv')
 
-def check_submit(home_lineup, home_form, away_lineup, away_form, data):
+def check_submit(home_lineup, home_form, away_lineup, away_form):
     go = True
     if (len(home_lineup) != 11 or len(away_lineup) != 11):
         st.error("Please verify number of players selected.",icon="🚨")
@@ -51,7 +50,7 @@ def check_submit(home_lineup, home_form, away_lineup, away_form, data):
             break
 
     if go == True:
-        prep_data(home_lineup, home_form, away_lineup, away_form, data)
+        prep_data(home_lineup, home_form, away_lineup, away_form)
     else:
         st.error("Something is wrong!",icon="🚨")
 
@@ -122,4 +121,4 @@ with st.form('Matchup:'):
         away_form = st.text_input('Please enter the last 5 results of the away team (e.g. WWDDL):')
 
 
-    st.form_submit_button("Submit", use_container_width=True, on_click=check_submit, args=(home_lineup,home_form,away_lineup,away_form,data))
+    st.form_submit_button("Submit", use_container_width=True, on_click=check_submit, args=(home_lineup,home_form,away_lineup,away_form))
