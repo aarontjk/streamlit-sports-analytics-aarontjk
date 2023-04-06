@@ -135,14 +135,14 @@ for player in away_lineup:
 awayplayers_param = awayplayers_param[:-1]
 st.write(awayplayers_param)
 
-home_form = 0
+home_form_num = 0
 for letter in home_form:
     if letter == 'W':
         home_form += 2
     elif letter == 'D':
         home_form += 1
 
-away_form = 0
+away_form_num = 0
 for letter in away_form:
     if letter == 'W':
         away_form += 2
