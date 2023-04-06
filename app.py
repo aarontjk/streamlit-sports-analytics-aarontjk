@@ -125,7 +125,8 @@ with st.form('Matchup:'):
 
 homeplayers_param = ''
 for player in home_lineup:
-    homeplayers_param += f',{player}'
+    homeplayers_param += f'{player},'
+homeplayers_param = homeplayers_param[:-1]
 st.write(homeplayers_param)
 
 if submitted:
