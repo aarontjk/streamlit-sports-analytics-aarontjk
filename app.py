@@ -129,6 +129,13 @@ for player in home_lineup:
 homeplayers_param = homeplayers_param[:-1]
 st.write(homeplayers_param)
 
+awayplayers_param = ''
+for player in away_lineup:
+    awayplayers_param += f'{player},'
+awayplayers_param = awayplayers_param[:-1]
+st.write(awayplayers_param)
+
+
 if submitted:
     session = requests.Session()
     outcome = session.get(url).json()
