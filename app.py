@@ -26,9 +26,7 @@ def check_submit(home_lineup, home_form, away_lineup, away_form):
             go = False
             break
 
-    if go == True:
-        prep_data(home_lineup, home_form, away_lineup, away_form)
-    else:
+    if go == False:
         st.error("Something is wrong!",icon="🚨")
 
 
@@ -113,18 +111,19 @@ awayplayers_param = awayplayers_param[:-1]
 st.write(awayplayers_param)
 
 home_form_num = 0
-for letter in home_form:
-    if letter == 'W':
+for char in  home_form:
+    if char == "W":
         home_form_num += 2
-    elif letter == 'D':
+    elif char == "D":
         home_form_num += 1
 
 away_form_num = 0
-for letter in away_form:
-    if letter == 'W':
+for char in  away_form:
+    if char == "W":
         away_form_num += 2
-    elif letter == 'D':
+    elif char == "D":
         away_form_num += 1
+
 
 url = f'https://ourapi.url/predict?home_lineup={homeplayers_param}&away_lineup={awayplayers_param}&home_form={home_form_num}&away_form={away_form_num}'
 
