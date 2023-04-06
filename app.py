@@ -29,6 +29,7 @@ def check_submit(home_lineup, home_form, away_lineup, away_form):
     if go == False:
         st.error("Something is wrong!",icon="🚨")
 
+    return go
 
 
 ### Load player dataset ###
@@ -131,7 +132,8 @@ st.write(url)
 
 
 if submitted:
-    session = requests.Session()
-    outcome = session.get(url).json()
+    if check_submit(home_lineup, home_form, away_lineup, away_form) == True:
+        session = requests.Session()
+        outcome = session.get(url).json()
 
-    st.markdown(f"""#Outcome: {outcome}""")
+        st.markdown(f"""#Outcome: {outcome}""")
