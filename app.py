@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import requests
 
-def prep_data(home_lineup, home_form, away_lineup, away_form):
+""" def prep_data(home_lineup, home_form, away_lineup, away_form):
 
     home_form_num = 0
     for char in  home_form:
@@ -24,7 +24,7 @@ def prep_data(home_lineup, home_form, away_lineup, away_form):
     away_df = players[players['player_name'].isin(away_lineup)]
 
     st.write(home_df)
-    st.write(away_df)
+    st.write(away_df) """
 
 def check_submit(home_lineup, home_form, away_lineup, away_form):
     go = True
@@ -54,7 +54,6 @@ def check_submit(home_lineup, home_form, away_lineup, away_form):
         st.error("Something is wrong!",icon="🚨")
 
 
-active = False
 
 ### Load player dataset ###
 data = "raw_data/player_attribute_2023.csv"
