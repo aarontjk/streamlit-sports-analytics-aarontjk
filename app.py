@@ -149,7 +149,7 @@ for letter in away_form:
     elif letter == 'D':
         away_form_num += 1
 
-url = f'https://ourapi.url/predict?home_lineup={homeplayers_param}&away_lineup={awayplayers_param}&home_form={home_form}&away_form={away_form}'
+url = f'https://ourapi.url/predict?home_lineup={homeplayers_param}&away_lineup={awayplayers_param}&home_form={home_form_num}&away_form={away_form_num}'
 
 st.write(url)
 
