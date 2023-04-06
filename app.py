@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import requests
 
 def prep_data(home_lineup, home_form, away_lineup, away_form):
 
@@ -119,4 +120,16 @@ with st.form('Matchup:'):
         away_form = st.text_input('Please enter the last 5 results of the away team (e.g. WWDDL):')
 
 
-    st.form_submit_button("Submit", use_container_width=True, on_click=check_submit, args=(home_lineup,home_form,away_lineup,away_form))
+        submitted = st.form_submit_button("Submit", use_container_width=True, on_click=check_submit, args=(home_lineup,home_form,away_lineup,away_form))
+
+
+homeplayers_param = ''
+for player in home_lineup:
+    homeplayers_param += f',{player}'
+st.write(homeplayers_param)
+
+if submitted:
+    session = requests.Session()
+    outcome = session.get(url).json()
+
+    st.markdown(f"""#Outcome: {outcome}""")
