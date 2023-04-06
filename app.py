@@ -120,7 +120,7 @@ with st.form('Matchup:'):
         away_form = st.text_input('Please enter the last 5 results of the away team (e.g. WWDDL):')
 
 
-        submitted = st.form_submit_button("Submit", use_container_width=True, on_click=check_submit, args=(home_lineup,home_form,away_lineup,away_form))
+    submitted = st.form_submit_button("Submit", use_container_width=True, on_click=check_submit, args=(home_lineup,home_form,away_lineup,away_form))
 
 
 homeplayers_param = ''
