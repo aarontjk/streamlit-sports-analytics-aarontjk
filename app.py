@@ -103,13 +103,13 @@ homeplayers_param = ''
 for player in home_lineup:
     homeplayers_param += f'{player},'
 homeplayers_param = homeplayers_param[:-1]
-st.write(homeplayers_param)
+
 
 awayplayers_param = ''
 for player in away_lineup:
     awayplayers_param += f'{player},'
 awayplayers_param = awayplayers_param[:-1]
-st.write(awayplayers_param)
+
 
 home_form_num = 0
 for char in  home_form:
