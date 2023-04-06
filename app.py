@@ -135,6 +135,24 @@ for player in away_lineup:
 awayplayers_param = awayplayers_param[:-1]
 st.write(awayplayers_param)
 
+home_form = 0
+for letter in home_form:
+    if letter == 'W':
+        home_form += 2
+    elif letter == 'D':
+        home_form += 1
+
+away_form = 0
+for letter in away_form:
+    if letter == 'W':
+        away_form += 2
+    elif letter == 'D':
+        away_form += 1
+
+url = f'https://ourapi.url/predict?home_lineup={homeplayers_param}&away_lineup={awayplayers_param}&home_form={home_form}&away_form={away_form}'
+
+st.write(url)
+
 
 if submitted:
     session = requests.Session()
