@@ -1,36 +1,8 @@
 import streamlit as st
 import pandas as pd
 import requests
+from PIL import Image
 
-
-
-def add_home_team_logo(home_team_id):
-    st.markdown(
-    f"""
-    <style>
-    .stApp {{
-        background-image: url(https://images.fotmob.com/image_resources/logo/teamlogo/{str(home_team_id)}_large.png);
-        background-position: left;
-        background-repeat: no-repeat
-    }}
-    </style>
-    """,
-    unsafe_allow_html=True
-    )
-
-def add_away_team_logo(away_team_id):
-    st.markdown(
-    f"""
-    <style>
-    .stApp {{
-        background-image: url(https://images.fotmob.com/image_resources/logo/teamlogo/{str(away_team_id)}_large.png);
-        background-position: right;
-        background-repeat: no-repeat
-    }}
-    </style>
-    """,
-    unsafe_allow_html=True
-    )
 
 
 def check_submit(home_lineup, home_team_id, away_lineup, away_team_id):
@@ -87,12 +59,12 @@ with a2:
 with a1:
     home_team = st.selectbox("Home Team:", options = clubs)
     home_team_id = clubs_df.query(f"home_team_name == '{home_team}'")['home_team_id'].iloc[0]
-    add_home_team_logo(home_team_id)
+    image = Image.open(f'https://images.fotmob.com/image_resources/logo/teamlogo/{home_team_id}_large.png')
 
 with a3:
     away_team = st.selectbox("Away Team:", options = clubs)
     away_team_id = clubs_df.query(f"away_team_name == '{away_team}'")['away_team_id'].iloc[0]
-    add_away_team_logo(away_team_id)
+
 
 ### Get players from each team ###
 home_players = players.query(f"player_team_name == '{home_team}'")
