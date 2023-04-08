@@ -35,9 +35,6 @@ players = pd.read_csv(data)
 clubs_path = "raw_data/final.csv"
 clubs_df = pd.read_csv(clubs_path)
 clubs = list(clubs_df['home_team_name'].unique())
-clubs.remove('Norwich')
-clubs.remove('Watford')
-clubs.remove('Burnley')
 clubs.sort()
 
 
