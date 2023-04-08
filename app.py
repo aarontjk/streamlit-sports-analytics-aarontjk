@@ -87,6 +87,16 @@ c1, c2, c3 = st.columns(3)
 with st.form('Matchup:'):
 
     with c1:
+        st.markdown(
+            """
+            <style>
+            span[data-baseweb="tag"] {
+            background-color: blue !important;
+            }
+            </style>
+            """,
+            unsafe_allow_html=True,
+        )
         home_lineup = st.multiselect(
         f'Select the starting lineup:',
         home_players, key='home_lineup')
