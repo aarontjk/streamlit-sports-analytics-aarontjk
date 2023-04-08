@@ -55,4 +55,6 @@ for char in  away_form:
             go = False
             break
 
+
+
     """
