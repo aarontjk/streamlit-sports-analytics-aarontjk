@@ -114,7 +114,7 @@ for player in away_lineup:
 awayplayers_param = awayplayers_param[:-1]
 
 
-url = f'https://ourapi.url/predict2?date_played={date_played}&home_lineup={homeplayers_param}&away_lineup={awayplayers_param}&home_team_id={home_team_id}&away_team_id={away_team_id}'
+url = f'https://sportsanalytics-maaojgn3sq-ew.a.run.app/predict2?date_played={date_played}&home_lineup={homeplayers_param}&away_lineup={awayplayers_param}&home_team_id={home_team_id}&away_team_id={away_team_id}'
 
 st.write(url)
 
