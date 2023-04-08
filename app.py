@@ -116,8 +116,6 @@ awayplayers_param = awayplayers_param[:-1]
 
 url = f'https://sportsanalytics-maaojgn3sq-ew.a.run.app/predict2?date_played={date_played}&home_lineup={homeplayers_param}&away_lineup={awayplayers_param}&home_team_id={home_team_id}&away_team_id={away_team_id}'
 
-st.write(url)
-
 
 if submitted:
     if check_submit(home_lineup, home_team_id, away_lineup, away_team_id) == True:
@@ -125,20 +123,22 @@ if submitted:
         outcome = session.get(url).json()['home_predicted']
         if outcome == 0:
             outcome = 'LOSE'
+            color = 'red'
         elif outcome == 1:
             outcome = 'DRAW'
+            color = 'orange'
         elif outcome == 2:
             outcome = 'WIN'
+            color = 'green'
 
-        st.markdown(f"""#{home_team} will {outcome} against {away_team}""")
 
-
-        st.markdown("""
+        st.markdown(f"""
         <style>
-        .big-font {
+        .big-font {{
             font-size:50px !important;
-        }
+            color: {color}
+        }}
         </style>
         """, unsafe_allow_html=True)
 
-        st.markdown(f'<p class="big-font">{home_team} will {outcome} against {away_team}</p>', unsafe_allow_html=True)
+        st.markdown('<p class="big-font">{home_team} will {outcome} against {away_team}</p>', unsafe_allow_html=True)
