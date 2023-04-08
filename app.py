@@ -113,22 +113,7 @@ for player in away_lineup:
 awayplayers_param = awayplayers_param[:-1]
 
 
-home_form_num = 0
-for char in  home_form:
-    if char == "W":
-        home_form_num += 2
-    elif char == "D":
-        home_form_num += 1
-
-away_form_num = 0
-for char in  away_form:
-    if char == "W":
-        away_form_num += 2
-    elif char == "D":
-        away_form_num += 1
-
-
-url = f'https://ourapi.url/predict?home_lineup={homeplayers_param}&away_lineup={awayplayers_param}&home_form={home_form_num}&away_form={away_form_num}'
+url = f'https://ourapi.url/predict?home_lineup={homeplayers_param}&away_lineup={awayplayers_param}&home_team_id={home_team_id}&away_form={away_team_id}'
 
 st.write(url)
 
