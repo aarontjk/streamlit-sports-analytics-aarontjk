@@ -4,6 +4,35 @@ import requests
 
 
 
+def add_home_team_logo(home_team_id):
+    st.markdown(
+    f"""
+    <style>
+    .stApp {{
+        background-image: url(https://images.fotmob.com/image_resources/logo/teamlogo/{str(home_team_id)}_large.png);
+        background-position: left;
+        background-repeat: no-repeat
+    }}
+    </style>
+    """,
+    unsafe_allow_html=True
+    )
+
+def add_away_team_logo(away_team_id):
+    st.markdown(
+    f"""
+    <style>
+    .stApp {{
+        background-image: url(https://images.fotmob.com/image_resources/logo/teamlogo/{str(away_team_id)}_large.png);
+        background-position: right;
+        background-repeat: no-repeat
+    }}
+    </style>
+    """,
+    unsafe_allow_html=True
+    )
+
+
 def check_submit(home_lineup, home_team_id, away_lineup, away_team_id):
     go = True
     if (len(home_lineup) != 11 or len(away_lineup) != 11):
@@ -58,11 +87,12 @@ with a2:
 with a1:
     home_team = st.selectbox("Home Team:", options = clubs)
     home_team_id = clubs_df.query(f"home_team_name == '{home_team}'")['home_team_id'].iloc[0]
+    add_home_team_logo(home_team_id)
 
 with a3:
     away_team = st.selectbox("Away Team:", options = clubs)
     away_team_id = clubs_df.query(f"away_team_name == '{away_team}'")['away_team_id'].iloc[0]
-
+    add_away_team_logo(away_team_id)
 
 ### Get players from each team ###
 home_players = players.query(f"player_team_name == '{home_team}'")
@@ -108,7 +138,7 @@ for player in away_lineup:
 awayplayers_param = awayplayers_param[:-1]
 
 
-url = f'https://ourapi.url/predict?date_played={date_played}&home_lineup={homeplayers_param}&away_lineup={awayplayers_param}&home_team_id={home_team_id}&away_team_id={away_team_id}'
+url = f'https://ourapi.url/predict2?date_played={date_played}&home_lineup={homeplayers_param}&away_lineup={awayplayers_param}&home_team_id={home_team_id}&away_team_id={away_team_id}'
 
 st.write(url)
 
@@ -116,6 +146,12 @@ st.write(url)
 if submitted:
     if check_submit(home_lineup, home_team_id, away_lineup, away_team_id) == True:
         session = requests.Session()
-        outcome = session.get(url).json()
+        outcome = session.get(url).json()['home_predicted']
+        if outcome == 0:
+            outcome = 'LOSE'
+        elif outcome == 1:
+            outcome = 'DRAW'
+        elif outcome == 2:
+            outcome = 'WIN'
 
-        st.markdown(f"""#Outcome: {outcome}""")
+        st.markdown(f"""#{home_team} will {outcome} against {away_team}""")
