@@ -10,11 +10,11 @@ def check_submit(home_lineup, home_team_id, away_lineup, away_team_id):
         st.error("Please verify number of players selected.",icon="🚨")
         go = False
 
-    if home_team_id.empty:
+    if not home_team_id:
         st.error("Please select Home Team.",icon="🚨")
         go = False
 
-    if not away_team_id.empty:
+    if not away_team_id:
         st.error("Please select Away Team.",icon="🚨")
         go = False
 
