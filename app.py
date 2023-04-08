@@ -5,6 +5,23 @@ from PIL import Image
 
 
 
+def add_bg_from_local():
+    st.markdown(
+    f"""
+    <style>
+    .stApp {{
+        background-image: url(https://images.unsplash.com/photo-1544914379-806667cd9489?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1631&q=80);
+        background-repeat: no-repeat
+    }}
+    </style>
+    """,
+    unsafe_allow_html=True
+    )
+
+add_bg_from_local()
+
+
+
 def check_submit(home_lineup, home_team_id, away_lineup, away_team_id):
     go = True
     if (len(home_lineup) != 11 or len(away_lineup) != 11):
