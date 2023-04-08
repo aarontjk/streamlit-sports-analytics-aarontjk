@@ -11,7 +11,8 @@ def add_bg_from_local():
     <style>
     .stApp {{
         background-image: url(https://images.unsplash.com/photo-1544914379-806667cd9489?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1631&q=80);
-        background-repeat: no-repeat
+        background-repeat: no-repeat;
+          background-size: auto;
     }}
     </style>
     """,
