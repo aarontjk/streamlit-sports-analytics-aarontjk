@@ -53,7 +53,7 @@ with a1:
 with a3:
     away_team = st.selectbox("Away Team:", options = clubs)
     away_team_id = clubs_df.query("away_team_name == '{away_team}'")
-    st.write('away_team_id')
+    st.write(away_team_id)
 
 
 ### Get players from each team ###
