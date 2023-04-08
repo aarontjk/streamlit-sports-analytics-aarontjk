@@ -137,7 +137,7 @@ if submitted:
         .big-font {{
             font-size:30px !important;
             color: {color};
-            width: screen.width;
+            width: 100%;
         }}
         </style>
         """, unsafe_allow_html=True)
