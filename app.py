@@ -21,6 +21,9 @@ def check_submit(home_lineup, home_team_id, away_lineup, away_team_id):
     if go == False:
         st.error("Something is wrong!",icon="🚨")
 
+    if not date_played:
+        st.error("Please enter match date.",icon="🚨")
+
     return go
 
 
