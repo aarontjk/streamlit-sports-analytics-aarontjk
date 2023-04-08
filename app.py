@@ -4,6 +4,16 @@ import requests
 from PIL import Image
 
 
+st.markdown(
+    """
+    <style>
+    span[data-baseweb="tag"] {
+    background-color: grey !important;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
+    )
 
 
 def check_submit(home_lineup, home_team_id, away_lineup, away_team_id):
@@ -87,16 +97,6 @@ c1, c2, c3 = st.columns(3)
 with st.form('Matchup:'):
 
     with c1:
-        st.markdown(
-            """
-            <style>
-            span[data-baseweb="tag"] {
-            background-color: grey !important;
-            }
-            </style>
-            """,
-            unsafe_allow_html=True,
-        )
         home_lineup = st.multiselect(
         f'Select the starting lineup:',
         home_players, key='home_lineup')
