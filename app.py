@@ -50,7 +50,7 @@ st.markdown("<h1 style='text-align: center; color: red;'>Football Outcome Predic
 a1, a2, a3 = st.columns(3)
 
 with a2:
-    date_played = st.date_input("Match Date:")
+    date_played = st.date_input("Match Date:", value=None)
 
 with a1:
     home_team = st.selectbox("Home Team:", options = clubs)
