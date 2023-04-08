@@ -34,6 +34,8 @@ clubs_df = pd.read_csv(clubs_path)
 clubs = list(clubs_df['home_team_name'].unique())
 clubs.sort()
 
+st.write(clubs_df)
+
 
 ### UI Design Below ###
 
@@ -48,12 +50,10 @@ a1, a2, a3 = st.columns(3)
 with a1:
     home_team = st.selectbox("Home Team:", options = clubs)
     home_team_id = clubs_df.query("home_team_name == '{home_team}'")
-    st.write(home_team_id)
 
 with a3:
     away_team = st.selectbox("Away Team:", options = clubs)
     away_team_id = clubs_df.query("away_team_name == '{away_team}'")
-    st.write(away_team_id)
 
 
 ### Get players from each team ###
