@@ -131,3 +131,14 @@ if submitted:
             outcome = 'WIN'
 
         st.markdown(f"""#{home_team} will {outcome} against {away_team}""")
+
+
+        st.markdown("""
+        <style>
+        .big-font {
+            font-size:300px !important;
+        }
+        </style>
+        """, unsafe_allow_html=True)
+
+        st.markdown(f'<p class="big-font">{home_team} will {outcome} against {away_team}</p>', unsafe_allow_html=True)
