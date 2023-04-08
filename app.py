@@ -38,6 +38,9 @@ clubs = list(clubs_df['home_team_name'].unique())
 clubs.sort()
 st.write(clubs)
 clubs.remove('Burnley')
+clubs.remove('Norwich City')
+clubs.remove('Watford')
+st.write(clubs)
 
 
 
