@@ -46,8 +46,8 @@ clubs.remove('Watford')
 
 ### UI Design Below ###
 
-st.markdown("<h1 style='text-align: center; color: white;'>SportsAnalytics</h1>", unsafe_allow_html=True)
-st.markdown("<h1 style='text-align: center; color: white;'>Football Outcome Predictor</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center;'>SportsAnalytics</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center;'>Football Outcome Predictor</h1>", unsafe_allow_html=True)
 
 
 ### Enter home and away teams ###
