@@ -106,7 +106,7 @@ for player in away_lineup:
 awayplayers_param = awayplayers_param[:-1]
 
 
-url = f'https://ourapi.url/predict?home_lineup={homeplayers_param}&away_lineup={awayplayers_param}&home_team_id={home_team_id}&away_form={away_team_id}'
+url = f'https://ourapi.url/predict?home_lineup={homeplayers_param}&away_lineup={awayplayers_param}&home_team_id={home_team_id}&away_team_id={away_team_id}'
 
 st.write(url)
 
