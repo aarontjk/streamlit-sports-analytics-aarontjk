@@ -36,6 +36,8 @@ clubs_path = "raw_data/final.csv"
 clubs_df = pd.read_csv(clubs_path)
 clubs = list(clubs_df['home_team_name'].unique())
 clubs.sort()
+st.write(clubs)
+clubs.remove('Burnley')
 
 
 
