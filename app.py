@@ -142,4 +142,4 @@ if submitted:
         </style>
         """, unsafe_allow_html=True)
 
-        st.markdown(f'<p class="big-font">{home_team} will <b>{outcome}</b> against {away_team}</p>', unsafe_allow_html=True)
+        st.markdown(f'<p class="big-font">{home_team} will <b><u>{outcome}</b></u> against {away_team}</p>', unsafe_allow_html=True)
