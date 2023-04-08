@@ -55,12 +55,12 @@ a1, a2, a3 = st.columns(3)
 
 with a1:
     home_team = st.selectbox("Home Team:", options = clubs)
-    home_team_id = clubs.query("home_team_name == '{home_team}'")['home_team_id']
+    home_team_id = clubs_df.query("home_team_name == '{home_team}'")['home_team_id']
 
 
 with a3:
     away_team = st.selectbox("Away Team:", options = clubs)
-    away_team_id = clubs.query("away_team_name == '{away_team}'")['away_team_id']
+    away_team_id = clubs_df.query("away_team_name == '{away_team}'")['away_team_id']
 
 
 ### Get players from each team ###
