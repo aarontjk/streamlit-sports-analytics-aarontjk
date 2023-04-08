@@ -55,12 +55,12 @@ a1, a2, a3 = st.columns(3)
 
 with a1:
     home_team = st.selectbox("Home Team:", options = clubs)
-    home_team_id = clubs_df.query("home_team_name == '{home_team}'")['home_team_id']
+    home_team_id = clubs_df.query("home_team_name == '{home_team}'")['home_team_id'][0]
 
 
 with a3:
     away_team = st.selectbox("Away Team:", options = clubs)
-    away_team_id = clubs_df.query("away_team_name == '{away_team}'")['away_team_id']
+    away_team_id = clubs_df.query("away_team_name == '{away_team}'")['away_team_id'][0]
 
 
 ### Get players from each team ###
@@ -84,18 +84,12 @@ with st.form('Matchup:'):
         home_players, key='home_lineup')
         st.write(len(home_lineup))
 
-        home_form = st.text_input('Please enter the last 5 results of the home team (e.g. WWDDL):')
-
-
-
 
     with c3:
         away_lineup = st.multiselect(
         f'Select the starting lineup:',
         away_players, key='away_lineup')
         st.write(len(away_lineup))
-
-        away_form = st.text_input('Please enter the last 5 results of the away team (e.g. WWDDL):')
 
 
     submitted = st.form_submit_button("Submit", use_container_width=True)

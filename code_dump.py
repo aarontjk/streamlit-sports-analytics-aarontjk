@@ -20,4 +20,25 @@
     away_df = players[players['player_name'].isin(away_lineup)]
 
     st.write(home_df)
-    st.write(away_df) """
+    st.write(away_df)
+
+
+    home_form_num = 0
+for char in  home_form:
+    if char == "W":
+        home_form_num += 2
+    elif char == "D":
+        home_form_num += 1
+
+away_form_num = 0
+for char in  away_form:
+    if char == "W":
+        away_form_num += 2
+    elif char == "D":
+        away_form_num += 1
+
+    home_form = st.text_input('Please enter the last 5 results of the home team (e.g. WWDDL):')
+
+    away_form = st.text_input('Please enter the last 5 results of the away team (e.g. WWDDL):')
+
+    """
