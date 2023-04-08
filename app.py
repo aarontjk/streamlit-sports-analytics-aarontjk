@@ -4,7 +4,7 @@ import requests
 
 
 
-def check_submit(home_lineup, home_form, away_lineup, away_form):
+def check_submit(home_lineup, home_team_id, away_lineup, away_team_id):
     go = True
     if (len(home_lineup) != 11 or len(away_lineup) != 11):
         st.error("Please verify number of players selected.",icon="🚨")
@@ -17,7 +17,6 @@ def check_submit(home_lineup, home_form, away_lineup, away_form):
     if not home_team_id:
         st.error("Please select Home Team.",icon="🚨")
         go = False
-
 
     if not away_team_id:
         st.error("Please select Away Team.",icon="🚨")
@@ -109,7 +108,7 @@ st.write(url)
 
 
 if submitted:
-    if check_submit(home_lineup, home_form, away_lineup, away_form) == True:
+    if check_submit(home_lineup, home_team_id, away_lineup, away_team_id) == True:
         session = requests.Session()
         outcome = session.get(url).json()
 
