@@ -136,10 +136,12 @@ if submitted:
         <style>
         .big-font {{
             font-size:30px !important;
-            color: {color};
             width: 1000px;
+        }}
+        .big-font-with-color {{
+            color: {color};
         }}
         </style>
         """, unsafe_allow_html=True)
 
-        st.markdown(f'<p class="big-font">{home_team} will <b>{outcome}</b> against {away_team}</p>', unsafe_allow_html=True)
+        st.markdown(f'<p class="big-font">{home_team} will <b=big-font-with-color>{outcome}</b> against {away_team}</p>', unsafe_allow_html=True)
