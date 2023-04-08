@@ -10,10 +10,6 @@ def check_submit(home_lineup, home_team_id, away_lineup, away_team_id):
         st.error("Please verify number of players selected.",icon="🚨")
         go = False
 
-    if (len(home_form) != 5 or len(away_form) != 5):
-        st.error("Please verify Form input.",icon="🚨")
-        go = False
-
     if not home_team_id:
         st.error("Please select Home Team.",icon="🚨")
         go = False
