@@ -59,7 +59,8 @@ with a2:
 with a1:
     home_team = st.selectbox("Home Team:", options = clubs)
     home_team_id = clubs_df.query(f"home_team_name == '{home_team}'")['home_team_id'].iloc[0]
-
+    url = f"https://images.fotmob.com/image_resources/logo/teamlogo/{home_team_id}_large.png"
+    st.image(url, caption='Home Logo', use_column_width=False)
 
 
 with a3:
