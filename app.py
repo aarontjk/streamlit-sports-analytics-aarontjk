@@ -91,7 +91,7 @@ with st.form('Matchup:'):
             """
             <style>
             span[data-baseweb="tag"] {
-            background-color: blue !important;
+            background-color: grey !important;
             }
             </style>
             """,
