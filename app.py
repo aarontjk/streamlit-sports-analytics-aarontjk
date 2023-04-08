@@ -14,17 +14,14 @@ def check_submit(home_lineup, home_form, away_lineup, away_form):
         st.error("Please verify Form input.",icon="🚨")
         go = False
 
-    for char in home_form:
-        if (char not in "WDL"):
-            st.error("Invalid Home Form input.",icon="🚨")
-            go = False
-            break
+    if not home_team_id:
+        st.error("Please select Home Team.",icon="🚨")
+        go = False
 
-    for char in away_form:
-        if (char not in "WDL"):
-            st.error("Invalid Away Form input.",icon="🚨")
-            go = False
-            break
+
+    if not away_team_id:
+        st.error("Please select Away Team.",icon="🚨")
+        go = False
 
     if go == False:
         st.error("Something is wrong!",icon="🚨")

@@ -41,4 +41,18 @@ for char in  away_form:
 
     away_form = st.text_input('Please enter the last 5 results of the away team (e.g. WWDDL):')
 
+
+
+        for char in home_form:
+        if (char not in "WDL"):
+            st.error("Invalid Home Form input.",icon="🚨")
+            go = False
+            break
+
+    for char in away_form:
+        if (char not in "WDL"):
+            st.error("Invalid Away Form input.",icon="🚨")
+            go = False
+            break
+
     """
