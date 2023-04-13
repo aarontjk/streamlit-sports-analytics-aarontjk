@@ -83,10 +83,10 @@ with a3:
 
 ### Get players from each team ###
 home_players = players.query(f"player_team_name == '{home_team}'")
-home_players = list(home_players['Name'])
+home_players = list(home_players['player_name'])
 home_players.sort()
 away_players = players.query(f"player_team_name == '{away_team}'")
-away_players = list(away_players['Name'])
+away_players = list(away_players['player_name'])
 away_players.sort()
 
 
